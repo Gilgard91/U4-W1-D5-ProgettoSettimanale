@@ -8,7 +8,12 @@ public class ImagePlayer extends ElementoMedia implements InterfacciaLuminosita 
     private int luminosita;
     public ImagePlayer(String titolo, int luminosita){
         super(titolo);
-        this.luminosita = luminosita;
+        if(luminosita > MAX_LUMINOSITA){
+            System.out.println("Valore non valido, luminosità settata al massimo ");
+            this.luminosita = MAX_LUMINOSITA;
+        } else {
+            this.luminosita = luminosita;
+        };
     }
 
 

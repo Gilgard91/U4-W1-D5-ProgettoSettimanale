@@ -44,9 +44,10 @@ public class MediaPlayer {
                     scanner.nextLine();
                     System.out.println("Inserisci il volume: ");
                     int volumeVideo = scanner.nextInt();
-                    scanner.nextLine();
+
                     System.out.println("Inserisci la luminosita: ");
                     int luminosita = scanner.nextInt();
+
                     playlist[i] = new VideoPlayer(titolo, durataVideo, volumeVideo, luminosita);
                     break;
                 case 3:

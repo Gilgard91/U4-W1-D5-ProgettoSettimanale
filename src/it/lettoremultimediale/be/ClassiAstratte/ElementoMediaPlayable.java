@@ -11,6 +11,11 @@ public abstract class ElementoMediaPlayable extends ElementoMedia implements Int
         this.durata = durata;
     }
 
+//    public ElementoMediaPlayable(String titolo, int durata){
+//        super(titolo);
+//        this.durata = durata;
+//    }
+
     public abstract void play();
 
     @Override
