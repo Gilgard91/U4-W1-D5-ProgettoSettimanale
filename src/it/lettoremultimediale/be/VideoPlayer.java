@@ -9,18 +9,15 @@ public class VideoPlayer extends ElementoMediaPlayable implements InterfacciaLum
     public VideoPlayer(String titolo, int durata, int volume, int luminosita){
         super(titolo, volume, durata);
         if(volume > MAX_VOLUME){
-            System.out.println("Valore non valido, volume settato al massimo");
             this.volume = MAX_VOLUME;
         } else {
             this.volume = volume;
         };
         if(luminosita > MAX_LUMINOSITA){
-            System.out.println("Valore non valido, luminosità settata al massimo ");
             this.luminosita = MAX_LUMINOSITA;
         } else {
             this.luminosita = luminosita;
         };
-
         this.durata = durata;
 
     }

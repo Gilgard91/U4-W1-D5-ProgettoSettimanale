@@ -36,6 +36,9 @@ public class MediaPlayer {
                     scanner.nextLine();
                     System.out.println("Inserisci il volume: ");
                     int volume = scanner.nextInt();
+                    if(volume > AudioPlayer.MAX_VOLUME){
+                        System.err.println("Valore non valido, volume settato al massimo");
+                    };
                     playlist[i] = new AudioPlayer(titolo, durataAudio,volume);
                     break;
                 case 2:
@@ -44,21 +47,30 @@ public class MediaPlayer {
                     scanner.nextLine();
                     System.out.println("Inserisci il volume: ");
                     int volumeVideo = scanner.nextInt();
-
+                    if(volumeVideo > VideoPlayer.MAX_VOLUME){
+                        System.err.println("Valore non valido, volume settato al massimo");
+                    };
+                    scanner.nextLine();
                     System.out.println("Inserisci la luminosita: ");
                     int luminosita = scanner.nextInt();
-
-                    playlist[i] = new VideoPlayer(titolo, durataVideo, volumeVideo, luminosita);
+                    if(luminosita > VideoPlayer.MAX_LUMINOSITA){
+                        System.err.println("Valore non valido, luminosità settata al massimo ");
+                    };
+                        playlist[i] = new VideoPlayer(titolo, durataVideo, volumeVideo, luminosita);
                     break;
                 case 3:
                     System.out.println("Inserisci la luminosita: ");
                     int luminositaImmagine = scanner.nextInt();
+                    if(luminositaImmagine > ImagePlayer.MAX_LUMINOSITA){
+                    System.err.println("Valore non valido, luminosità settata al massimo ");
+                    };
                     playlist[i] = new ImagePlayer(titolo, luminositaImmagine);
                     break;
                 default:
                     System.out.println("Tipo non presente, inserire nuovamente.");
                     i--;
                     break;
+
             }
         }
 
